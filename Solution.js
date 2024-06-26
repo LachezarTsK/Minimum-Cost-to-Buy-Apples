@@ -1,5 +1,7 @@
 
 // const {MinPriorityQueue} = require('@datastructures-js/priority-queue');
+// when running the code on leetcode.com, the line above should be commented out
+// because it is automatically included in the Solution file on leetcode.com
 
 /**
  * @param {number} numberOfCities
