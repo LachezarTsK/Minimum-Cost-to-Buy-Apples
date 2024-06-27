@@ -42,14 +42,11 @@ class Solution {
     private fun createUndirectedGraph(roads: Array<IntArray>): Array<ArrayList<Road>> {
         val undirectedGraph = Array<ArrayList<Road>>(numberOfCities) { ArrayList<Road>() }
 
-        for (road in roads) {
-            // road[0] - 1 and road[1] - 1
+        for ((from, to, cost) in roads) {
+            // from - 1 and to - 1
             // transition from one-based to zero-based city IDs
-            val from = road[0] - 1
-            val to = road[1] - 1
-            val cost = road[2]
-            undirectedGraph[from].add(Road(to, cost))
-            undirectedGraph[to].add(Road(from, cost))
+            undirectedGraph[from - 1].add(Road(to - 1, cost))
+            undirectedGraph[to - 1].add(Road(from - 1, cost))
         }
         return undirectedGraph
     }
